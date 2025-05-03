@@ -16,6 +16,7 @@ declare module 'vue' {
     Footer: typeof import('./Components/Core/Footer/Footer.vue')['default']
     InputError: typeof import('./Components/InputError.vue')['default']
     InputLabel: typeof import('./Components/InputLabel.vue')['default']
+    LessFooter: typeof import('./Components/Core/Footer/LessFooter.vue')['default']
     Modal: typeof import('./Components/Modal.vue')['default']
     NavLink: typeof import('./Components/NavLink.vue')['default']
     PrimaryButton: typeof import('./Components/PrimaryButton.vue')['default']
