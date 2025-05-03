@@ -14,6 +14,7 @@ declare module 'vue' {
     Dropdown: typeof import('./Components/Dropdown.vue')['default']
     DropdownLink: typeof import('./Components/DropdownLink.vue')['default']
     Footer: typeof import('./Components/Core/Footer/Footer.vue')['default']
+    FooterElegant: typeof import('./Components/Core/Footer/FooterElegant.vue')['default']
     InputError: typeof import('./Components/InputError.vue')['default']
     InputLabel: typeof import('./Components/InputLabel.vue')['default']
     LessFooter: typeof import('./Components/Core/Footer/LessFooter.vue')['default']
