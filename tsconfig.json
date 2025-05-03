@@ -11,8 +11,16 @@
         "forceConsistentCasingInFileNames": true,
         "noEmit": true,
         "skipLibCheck": true,
+        "types": ["node"],
         "paths": {
             "@/*": ["./resources/js/*"],
+            "@Components/*": ["./resources/js/Components/*"],
+            "@Composables/*": ["./resources/js/Composables/*"],
+            "@Pages/*": ["./resources/js/Pages/*"],
+            "@Repositories/*": ["./resources/js/repositories/*"],
+            "@Utils/*": ["./resources/js/utils/*"],
+            "@Libs/*": ["./resources/js/lib/*"],
+            "@Layouts/*": ["./resources/js/Layouts/*"],
             "ziggy-js": ["./vendor/tightenco/ziggy"]
         }
     },
