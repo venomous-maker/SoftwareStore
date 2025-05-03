@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 import AutoImport from 'unplugin-auto-import/vite';
-
+import Components from 'unplugin-vue-components/vite';
 export default defineConfig({
     plugins: [
         laravel({
@@ -28,6 +28,12 @@ export default defineConfig({
                 }
             ],
             dts: 'resources/js/auto-imports.d.ts', // optional TypeScript support
+        }),
+        Components({
+            dts: 'resources/js/components.d.ts',
+            dirs: ['resources/js/Components'], // Adjust to your component path
+            extensions: ['vue'],
+            deep: true,
         }),
     ],
     build: {
