@@ -20,8 +20,8 @@ export default defineConfig({
         }),
         AutoImport({
             imports: [
+                'vue',
                 {
-                    'vue',
                     'ziggy-js': [
                         'Ziggy', // import { Ziggy } from 'ziggy-js'
                         'route'  // import route from 'ziggy-js'
