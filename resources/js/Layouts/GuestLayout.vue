@@ -6,10 +6,12 @@ import { onMounted, ref } from 'vue';
 // Define props and types
 interface Props {
     title?: string;
+    organizationName?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
     title: 'CodeNexus - Premium Software Marketplace',
+    organizationName: 'Software Store',
 });
 
 // Mobile navigation state
