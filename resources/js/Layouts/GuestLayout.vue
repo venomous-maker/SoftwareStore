@@ -249,6 +249,15 @@ onMounted(() => {
         </main>
 
         <!-- Footer -->
-        <footer></footer>
+        <Footer
+            :organization-name="organizationName"
+            :copyright="
+                '@ ' +
+                new Date().getFullYear() +
+                ' ' +
+                organizationName +
+                '. All rights reserved.'
+            "
+        ></Footer>
     </div>
 </template>
