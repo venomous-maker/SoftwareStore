@@ -37,6 +37,8 @@
     "dependencies": {
         "@vueuse/core": "^13.1.0",
         "lucide-react": "^0.507.0",
+        "lucide-vue": "^0.507.0",
+        "lucide-vue-next": "^0.507.0",
         "tailwindcss-animate": "^1.0.7",
         "ziggy-js": "^2.5.2"
     }
