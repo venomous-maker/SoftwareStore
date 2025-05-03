@@ -1,8 +1,13 @@
-import { defineConfig } from 'vite';
-import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
+import laravel from 'laravel-vite-plugin';
+import path from 'path';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
+import { fileURLToPath } from 'url';
+import { defineConfig } from 'vite';
+
+// Define __dirname for ESM
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
     plugins: [
         laravel({
@@ -19,29 +24,27 @@ export default defineConfig({
             },
         }),
         AutoImport({
-            imports: [
-                'vue',
-                {
-                    'ziggy-js': [
-                        'Ziggy', // import { Ziggy } from 'ziggy-js'
-                        'route'  // import route from 'ziggy-js'
-                    ]
-                }
+            imports: ['vue', '@vueuse/core'],
+            dirs: [
+                './resources/js/Composables/**',
+                './resources/js/repositories/**',
+                './resources/js/utils/**',
+                './resources/js/repositories/**',
             ],
-            dts: 'resources/js/auto-imports.d.ts', // optional TypeScript support
+            dirsScanOptions: {
+                types: true,
+            },
+            viteOptimizeDeps: true,
+            vueTemplate: true,
+            dts: 'resources/js/auto-imports.d.ts',
         }),
         Components({
             dts: 'resources/js/components.d.ts',
-            dirs: ['resources/js/Components'], // Adjust to your component path
+            dirs: ['resources/js/Components/**'], // Adjust to your component path
             extensions: ['vue'],
             deep: true,
         }),
     ],
-    build: {
-        rollupOptions: {
-            external: ['ziggy-js']
-        }
-    },
     resolve: {
         alias: {
             '@': path.resolve(__dirname, 'resources/js'),
