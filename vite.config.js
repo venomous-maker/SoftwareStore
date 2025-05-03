@@ -41,5 +41,21 @@ export default defineConfig({
         rollupOptions: {
             external: ['ziggy-js']
         }
-    }
+    },
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, 'resources/js'),
+            '@Components': path.resolve(__dirname, 'resources/js/Components'),
+            '@Composables': path.resolve(__dirname, 'resources/js/Composables'),
+            '@Pages': path.resolve(__dirname, 'resources/js/Pages'),
+            '@Repositories': path.resolve(
+                __dirname,
+                'resources/js/repositories',
+            ),
+            '@Utils': path.resolve(__dirname, 'resources/js/utils'),
+            '@Libs': path.resolve(__dirname, 'resources/js/lib'),
+            '@Layouts': path.resolve(__dirname, 'resources/js/Layouts'),
+            'ziggy-js': path.resolve(__dirname, 'vendor/tightenco/ziggy'),
+        },
+    },
 });
