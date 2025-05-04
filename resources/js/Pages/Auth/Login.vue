@@ -1,4 +1,5 @@
 <template>
+    <GuestLayout>
     <div
         class="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-12 sm:px-6 lg:px-8"
     >
@@ -274,12 +275,14 @@
             </form>
         </div>
     </div>
+    </GuestLayout>
 </template>
 
 <script lang="ts">
 import { router } from '@inertiajs/vue3';
 import axios from 'axios';
 import { defineComponent, reactive, ref } from 'vue';
+import GuestLayout from '@Layouts/GuestLayout.vue';
 interface LoginForm {
     email: string;
     password: string;
@@ -293,6 +296,7 @@ interface FormErrors {
 
 export default defineComponent({
     name: 'LoginPage',
+    components: { GuestLayout },
 
     setup() {
         const loading = ref(false);
