@@ -277,9 +277,9 @@
 </template>
 
 <script lang="ts">
+import { router } from '@inertiajs/vue3';
 import axios from 'axios';
 import { defineComponent, reactive, ref } from 'vue';
-import { router } from '@inertiajs/vue3';
 interface LoginForm {
     email: string;
     password: string;
