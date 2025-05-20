@@ -8,7 +8,7 @@ export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
   const Ziggy: typeof import('ziggy-js')['Ziggy']
-  const api: typeof import('./utils/Api/api')['default']
+  const api: typeof import('./utils/Api/api.ts~')['default']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
   const computed: typeof import('vue')['computed']
@@ -305,7 +305,7 @@ declare module 'vue' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
-    readonly api: UnwrapRef<typeof import('./utils/Api/api')['default']>
+    readonly api: UnwrapRef<typeof import('./utils/Api/api.ts~')['default']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
