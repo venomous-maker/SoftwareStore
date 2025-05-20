@@ -55,6 +55,7 @@ export default defineConfig({
                 __dirname,
                 'resources/js/repositories',
             ),
+            '@stores': path.resolve(__dirname, 'resources/js/stores'),
             '@Utils': path.resolve(__dirname, 'resources/js/utils'),
             '@Libs': path.resolve(__dirname, 'resources/js/lib'),
             '@Layouts': path.resolve(__dirname, 'resources/js/Layouts'),

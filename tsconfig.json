@@ -21,6 +21,7 @@
             "@Utils/*": ["./resources/js/utils/*"],
             "@Libs/*": ["./resources/js/lib/*"],
             "@Layouts/*": ["./resources/js/Layouts/*"],
+            "@stores/*": ["./resources/js/stores/*"],
             "ziggy-js": ["./vendor/tightenco/ziggy"]
         }
     },
