@@ -1,5 +1,6 @@
 // src/axios.js
 import axios from 'axios';
+import { useAuthStore } from '@stores/Auth/auth-store';
 
 // Create an axios instance
 const api = axios.create({
@@ -36,6 +37,32 @@ api.get('/sanctum/csrf-cookie')
 // );
 
 // Add a response interceptor (optional)
+
+// Request interceptor to attach token
+api.interceptors.request.use((config) => {
+    const auth = useAuthStore();
+
+    if (auth.accessToken) {
+        config.headers.Authorization = `Bearer ${auth.accessToken}`;
+    }
+
+    return config;
+});
+
+// Optional: Response interceptor to handle 401
+api.interceptors.response.use(
+    (response) => response,
+    async (error) => {
+        const auth = useAuthStore();
+
+        // Example: auto-logout on 401
+        if (error.response?.status === 401) {
+            auth.logout();
+        }
+
+        return Promise.reject(error);
+    }
+);
 api.interceptors.response.use(
     (response) => response,
     (error) => {
